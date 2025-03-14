@@ -79,6 +79,7 @@ body {
 .text-prev {
     color: #fff;
     margin-left: 20px;
+    text-transform: capitalize;
 }
 
 .humidity {

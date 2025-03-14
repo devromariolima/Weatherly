@@ -35,3 +35,9 @@
 - JavaScript: Consumo da API e manipulação do DOM.
 
 - API: OpenWeatherMap.
+
+
+<img src="https://i.imgur.com/1s7D9Mh.png" alt="Desktop Screenshot" width="600"/>
+
+
+<img src="https://i.imgur.com/wCW77w8.png" alt="Desktop Screenshot" width="600"/>

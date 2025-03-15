@@ -20,7 +20,7 @@
 
 ## Como usar
 
-- Acesse o projeto: [[Link do GitHub Pages ou do deploy](https://weatherly-fawn.vercel.app/)]
+- Acesse o projeto: [[Link do deploy](https://weatherly-fawn.vercel.app/)]
 
 - Insira o nome da cidade: Digite o nome da cidade no campo de busca e pressione "Enter" ou clique no botão de busca.
 

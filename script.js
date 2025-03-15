@@ -7,6 +7,7 @@ function insertData(data) {
     document.querySelector('.temp').innerText = Math.floor(data.main.temp) + " °C";
     document.querySelector('.text-prev').innerText = data.weather[0].description;
     document.querySelector('.humidity').innerText = 'Umidade: ' + data.main.humidity + ' %';
+    document.querySelector('.country').innerText = 'Pais: ' + data.sys.country;
     document.querySelector('.img-prev').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
 
 }
@@ -17,7 +18,7 @@ async function getCity(input) {
     try {
         const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${ApiKey}&lang=pt_br&units=metric`)
             .then(response => response.json())
-
+        console.log(data)
         if (data.cod == 404) {
             return toggleDiv(), setTimeout(() => {
                 hideDiv()

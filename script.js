@@ -12,23 +12,32 @@ function insertData(data) {
 }
 
 async function getCity(input) {
+    const loading = document.getElementById('loading');
+    loading.style.display = 'block';
+    try {
+        const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${ApiKey}&lang=pt_br&units=metric`)
+            .then(response => response.json())
 
-    const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${ApiKey}&lang=pt_br&units=metric`)
-        .then(response => response.json())
+        if (data.cod == 404) {
+            return toggleDiv(), setTimeout(() => {
+                hideDiv()
+            }, 3000);
+        } else {
+            insertData(data)
+        }
 
-    if (data.cod == 404) {
-        return toggleDiv(), setTimeout(() => {
-            hideDiv()
-        }, 3000);
+    } catch (error) {
+        console.error("Erro na requisição:", error);
+    } finally {
+        loading.style.display = 'none';
     }
-
-    insertData(data)
-    console.log(data)
 }
+
 
 function getWeather() {
     const input = document.querySelector('.input-city').value.trim();
     getCity(input);
+
 }
 
 function toggleDiv() {

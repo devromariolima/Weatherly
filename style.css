@@ -113,3 +113,44 @@ body {
         top: 10px;
     }
 }
+
+/* loading */
+
+#loading {
+    display: none;
+    position: fixed;
+    /* Fixa o elemento na tela */
+    top: 50%;
+    /* Posiciona no centro vertical */
+    left: 50%;
+    /* Posiciona no centro horizontal */
+    transform: translate(-50%, -50%);
+    /* Centraliza exatamente no meio */
+    text-align: center;
+    font-size: 18px;
+    color: #eeecec;
+    z-index: 1000;
+    /* Garante que fique acima de outros elementos */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 3px solid #007bff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}

@@ -15,7 +15,9 @@ async function getCity(input) {
         .then(response => response.json())
 
     if (data.cod == 404) {
-        return alert('Cidade não encontrada')
+        return toggleDiv(), setTimeout(() => {
+            hideDiv()
+        }, 3000);
     }
 
     insertData(data)
@@ -26,3 +28,16 @@ function getWeather() {
     const input = document.querySelector('.input-city').value;
     getCity(input)
 }
+
+function toggleDiv() {
+    var show = document.getElementById("alert");
+    show.style.display = "block";
+
+}
+
+function hideDiv() {
+    var hide = document.getElementById("alert");
+    hide.style.display = "none";
+
+}
+
